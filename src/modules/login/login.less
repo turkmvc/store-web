@@ -1,0 +1,100 @@
+@login-form-wrapper-width: 380px;
+@login-form-wrapper-border-radius: 5px;
+@login-form-wrapper-box-shadow: 0 0 3px 0;
+@login-form-header-height: 44px;
+@login-form-submit-button-height: 43px;
+@forgot-password-button-height: 44px;
+@login-form-padding: 18px 40px 27px 40px;
+@login-form-container-padding-top: 30px;
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+
+  .login-page-header {
+    color: @store-grey;
+    font-size: @x-large-font-size;
+    letter-spacing: @larger-letter-spacing;
+  }
+
+  .login-form-container {
+    padding-top: @login-form-container-padding-top;
+
+    .login-form-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      width: @login-form-wrapper-width;
+
+      border-radius: @login-form-wrapper-border-radius;
+      box-shadow: @login-form-wrapper-box-shadow @store-black-with-opacity;
+
+      .login-form-header {
+        width: 100%;
+        height: @login-form-header-height;
+        line-height: @login-form-header-height;
+        background-color: @store-teal-blue;
+
+        text-align: center;
+        font-size: @larger-font-size;
+        letter-spacing: @large-letter-spacing;
+        color: @store-white;
+      }
+
+      .forgot-password-button {
+        width: 100%;
+        height: @forgot-password-button-height;
+        line-height: @forgot-password-button-height;
+
+        padding: 0;
+        border-radius: 0;
+        outline: none;
+        background-color: @store-blur-white;
+        border-top: @small-border-width solid @store-light-blue;
+      }
+
+      .login-form {
+        width: 100%;
+        padding: @login-form-padding;
+        background-color: @store-white;
+        position: relative;
+
+        .username-input, .password-input {
+          border-radius: 0;
+          border-width: 0 0 @small-border-width 0;
+          box-shadow: none;
+          padding-left: 0;
+        }
+      }
+
+      .login-tooltip-inner {
+        background-color: @store-coral-pink;
+      }
+
+      .login-tooltip-arrow {
+        border-right-color: @store-coral-pink;
+      }
+
+      .login-form-submit-button {
+        width: 100%;
+        height: @login-form-submit-button-height;
+        text-align: center;
+        background-color: @store-green-yellow;
+
+        border-radius: 0;
+
+        outline: none;
+        border: none;
+
+        font-size: @larger-font-size;
+        color: @store-white;
+      }
+    }
+  }
+}

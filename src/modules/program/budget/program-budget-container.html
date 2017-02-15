@@ -1,0 +1,40 @@
+<div class="budget-container">
+    <div class="budget-title"
+         ng-bind="::programBudgetContainer.title">
+    </div>
+
+    <div class="program-table-progress-container">
+        <div class="progress-bar-min-max-values min-value"
+             ng-if="::programBudgetContainer.progressBarConfig.showMinMax"
+             ng-bind="::programBudgetContainer.progressBarConfig.minValue | number: 2">
+        </div>
+        <uib-progress class="program-table-progress"
+                      max="programBudgetContainer.progressBarConfig.maxValue">
+            <uib-bar class="program-table-progress-bar first-bar"
+                     ng-if="::programBudgetContainer.isBelowThreshold"
+                     value="::programBudgetContainer.progressBarConfig.currentValue">
+                <span ng-bind="::programBudgetContainer.percentageText"></span>
+            </uib-bar>
+            <uib-bar class="program-table-progress-bar second-bar"
+                     ng-if="::!programBudgetContainer.isBelowThreshold"
+                     value="::programBudgetContainer.secondBarValue">
+                <span ng-bind="::programBudgetContainer.percentageText"></span>
+            </uib-bar>
+        </uib-progress>
+        <div class="progress-bar-min-max-values max-value"
+             ng-if="::programBudgetContainer.progressBarConfig.showMinMax"
+             ng-bind="::programBudgetContainer.progressBarConfig.maxValue | number: 2">
+        </div>
+    </div>
+    <div class="budget-info-container">
+        <div class="budget-info"
+             ng-repeat="budgetInfo in ::programBudgetContainer.info track by budgetInfo.title">
+            <span class="budget-info-title"
+                  ng-bind="::budgetInfo.title">
+            </span>
+            <span class="budget-info-value"
+                  ng-bind="::budgetInfo.value">
+            </span>
+        </div>
+    </div>
+</div>

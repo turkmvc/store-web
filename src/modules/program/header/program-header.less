@@ -1,0 +1,59 @@
+@sync-icon-size: 20px;
+@sync-button-height: 32px;
+@sync-button-width: 120px;
+@sync-info-margin-right: 13px;
+@sync-button-side-padding: 8px;
+@program-header-container-padding: @medium-padding;
+
+.program-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: @program-header-container-padding;
+  background-color: @store-dark-grey;
+  color: @store-white;
+
+  .program-header-name-date-container {
+    display: flex;
+    flex-direction: column;
+
+    .program-name {
+      font-size: @xxx-large-font-size;
+    }
+  }
+
+  .program-header-sync-container {
+    display: flex;
+
+    .sync-info {
+      display: flex;
+      flex-direction: column;
+      margin-right: @sync-info-margin-right;
+    }
+
+    .sync-button {
+      display: flex;
+      justify-content: space-between;
+      height: @sync-button-height;
+      width: @sync-button-width;
+
+      padding-left: @sync-button-side-padding;
+      padding-right: @sync-button-side-padding;
+
+      .sync-button-icon {
+        height: @sync-icon-size;
+        width: @sync-icon-size;
+        .teal-blue-sync-icon-url();
+        .default-background-image-options();
+      }
+    }
+  }
+
+  .program-name, .sync-info-text {
+    color: @store-lighter-grey;
+  }
+  .program-date, .sync-info-time {
+    color: @store-pinkish-grey;
+  }
+}

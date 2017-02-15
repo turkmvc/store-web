@@ -1,0 +1,33 @@
+{
+  "name": "mearm",
+  "description": "Monitise Mea Resource Management Web Client",
+  "authors": [
+    "MonitiseMEA Team"
+  ],
+  "license": "UNLICENSED",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.5.0-beta.2",
+    "angular-ui-router": "0.2.15",
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.6",
+    "angular-bootstrap": "~1.1.1"
+  },
+  "devDependencies": {
+    "es5-shim": "~4.4.0",
+    "mmea-ng-http": "ssh://gerrit.pozitron.com:29418/MMEA-Web-Ng-Http-Artifacts.git#0.0.1",
+    "mmea-ng-i18n": "ssh://gerrit.pozitron.com:29418/Mmea-Web-Ng-I18n-Artifacts.git#0.0.2",
+    "angular-mocks": "1.5.0-beta.2"
+  },
+  "resolutions": {
+    "angular": "1.5.0-beta.2"
+  }
+}
