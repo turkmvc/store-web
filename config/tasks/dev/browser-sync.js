@@ -21,7 +21,7 @@ module.exports = function (gulp, dirname) {
         endPointUrl.slice(0, endPointUrl.length - 1);
 
         var proxyOptions = url.parse(endPointUrl);
-        proxyOptions.route = "/MeaRM";
+        proxyOptions.route = "/store";
 
         browserSync.init([dirname + "/dist/*.css", dirname + "/dist/index.html"], {
             server: {
