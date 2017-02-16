@@ -1,8 +1,8 @@
 <div class="login-form-wrapper">
-    <div class="login-form-header"
+    <!-- <div class="login-form-header"
          ng-bind="::loginFormConfig.formHeaderTitle">
-    </div>
-    <form name="userform"
+    </div> -->
+    <!-- <form name="userform"
           class="login-form"
           ng-submit="login(userform, credentials)">
         <div class="form-group">
@@ -43,9 +43,22 @@
                 class="btn btn-default login-form-submit-button"
                 ng-bind="::loginFormConfig.submit">
         </button>
+    </form> -->
+    <form class="ui form">
+      <div class="field">
+        <label>Username</label>
+        <input type="text" name="user-name" placeholder="Username">
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="text" name="password" placeholder="Password">
+      </div>
+      <div class="field">
+        <div class="ui checkbox">
+          <input type="checkbox" tabindex="0" class="hidden">
+          <label>Remember me</label>
+        </div>
+      </div>
+      <button class="ui button" type="submit">Submit</button>
     </form>
-    <button type="submit" name="forgot"
-            class="btn btn-default forgot-password-button"
-            ng-bind="::loginFormConfig.forgotPassword">
-    </button>
 </div>
