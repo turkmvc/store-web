@@ -38,7 +38,7 @@ angular.module("store.login").directive("loginForm",
 
                 scope.successLogin = function (data) {
                     if (data.loggedIn) {
-                        $state.go(stateNames.PROGRAM);
+                        $state.go(stateNames.DASHBOARD);
                     } else {
                         scope.showTooltip(".password-input");
                     }
