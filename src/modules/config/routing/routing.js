@@ -25,7 +25,7 @@ angular.module("store.routing")
                 "url": "/dashboard",
                 "views": {
                     "appContainer@": {
-                        "controller": "dashboardController",
+                        "controller": "dashboardController as dashboard",
                         "templateUrl": "/modules/dashboard/dashboard.html"
                     }
                 }
@@ -34,7 +34,7 @@ angular.module("store.routing")
                 "url": "/login",
                 "views": {
                     "appContainer@": {
-                        "controller": "loginController",
+                        "controller": "loginController as login",
                         "templateUrl": "/modules/login/login.html"
                     }
                 }

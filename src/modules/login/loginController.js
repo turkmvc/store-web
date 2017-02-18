@@ -12,8 +12,15 @@ angular.module("store.login")
     .controller("loginController",
         ["$http", "$scope",
             function ($http, $scope) {
-                $scope.loginPageConfig = {
-                    mainTitle: "RESOURCE ALLOCATION TOOL"
+
+              var self = this;
+
+                self.loginPageConfig = {
+                    mainTitle: "STORE APP"
+                };
+
+                self.login = function () {
+                  
                 };
                 $scope.loginFormConfig = {
                     formHeaderTitle : "Sign In to Your Account",

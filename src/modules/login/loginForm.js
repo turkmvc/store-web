@@ -21,35 +21,19 @@ angular.module("store.login").directive("loginForm",
             },
             link: function (scope, element) {
 
-                scope.showTooltip = function (inputSelector) {
-                    angular.element(inputSelector).tooltip("show");
-                    element.find(".tooltip-inner").addClass("login-tooltip-inner");
-                    element.find(".tooltip-arrow").addClass("login-tooltip-arrow");
-                };
-
-                scope.hideTooltip = function (inputSelector) {
-                    $(inputSelector).tooltip("destroy");
-                };
-
-                scope.inputFocus = function () {
-                    scope.hideTooltip(".username-input");
-                    scope.hideTooltip(".password-input");
-                };
-
                 scope.successLogin = function (data) {
-                    if (data.loggedIn) {
-                        $state.go(stateNames.DASHBOARD);
-                    } else {
-                        scope.showTooltip(".password-input");
-                    }
+                  if (data.successful) {
+                    $state.go(stateNames.DASHBOARD);
+                  }
+                  console.log(data);
                 };
 
                 scope.errorLogin = function (data) {
-                    scope.showTooltip(".password-input");
+                  console.log(data);
                 };
 
-                scope.login = function (userform, credentials) {
-
+                scope.login = function (credentials) {
+                  debugger;
                     if (!credentials || !validationUtil.nullCheck(credentials.username)) {
                         scope.showTooltip(".username-input");
                         return;
@@ -58,7 +42,7 @@ angular.module("store.login").directive("loginForm",
                     var request = {
                         name : "store",
                         method: "POST",
-                        url: "http://localhost:8082/mea-rm-rest-0.0.0-SNAPSHOT/login/",//TODO collect urls to constants
+                        url: "http://localhost:8080/login/",//TODO collect urls to constants
                         data: credentials // pass in data as strings
                     };
 

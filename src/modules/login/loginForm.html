@@ -1,49 +1,4 @@
 <div class="login-form-wrapper">
-    <!-- <div class="login-form-header"
-         ng-bind="::loginFormConfig.formHeaderTitle">
-    </div> -->
-    <!-- <form name="userform"
-          class="login-form"
-          ng-submit="login(userform, credentials)">
-        <div class="form-group">
-            <label ng-bind="::loginFormConfig.formUsername.label">
-            </label>
-            <input type="text"
-                   class="form-control username-input"
-                   id="usernameInput"
-                   ng-model="credentials.username"
-                   placeholder="{{::loginFormConfig.formUsername.input}}"
-                   ng-focus="inputFocus()"
-                   data-toggle="tooltip"
-                   data-trigger="manual"
-                   data-placement="right"
-                   title="{{::loginFormConfig.formUsername.tooltip}}">
-        </div>
-        <div class="form-group">
-            <label ng-bind="::loginFormConfig.formPassword.label">
-            </label>
-            <input type="password"
-                   class="form-control password-input"
-                   ng-model="credentials.password"
-                   placeholder="{{::loginFormConfig.formPassword.input}}"
-                   ng-focus="inputFocus()"
-                   data-toggle="tooltip"
-                   data-trigger="manual"
-                   data-placement="right"
-                   title="{{::loginFormConfig.formPassword.tooltip}}">
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox">
-                <span ng-bind="::loginFormConfig.rememberMe"></span>
-            </label>
-        </div>
-        <button type="submit"
-                name="submit"
-                class="btn btn-default login-form-submit-button"
-                ng-bind="::loginFormConfig.submit">
-        </button>
-    </form> -->
     <form class="ui form">
       <div class="field">
         <label>Username</label>
@@ -59,15 +14,8 @@
                name="password"
                placeholder="Paswword">
       </div>
-      <div class="field">
-        <div class="ui checkbox">
-          <input type="checkbox"
-                 ng-model="credentials.rememberMe"
-                 tabindex="0"
-                 class="hidden">
-          <label>Remember me</label>
-        </div>
-      </div>
-      <button class="ui button" type="submit">Submit</button>
+      <button class="ui button"
+              ng-click="login(credentials)"
+              type="submit">Login</button>
     </form>
 </div>
