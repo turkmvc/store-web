@@ -1,17 +1,7 @@
-/*
- * Copyright 2003-2016 Monitise Group Limited. All Rights Reserved.
- *
- * Save to the extent permitted by law, you may not use, copy, modify,
- * distribute or create derivative works of this material or any part
- * of it without the prior written consent of Monitise Group Limited.
- * Any reproduction of this material must contain this notice.
- *
- */
-
 angular.module("store.routing")
-    .config(["$stateProvider", "stateNames",
-    function ($stateProvider, stateNames) {
-        $stateProvider
+    .config(["storeStateProvider", "stateNames",
+    function (storeStateProvider, stateNames) {
+        storeStateProvider
             .state(stateNames.GUEST_BASE, {
                 "abstract": true
             })
@@ -19,15 +9,11 @@ angular.module("store.routing")
                 "abstract": true
             })
             .state(stateNames.AUTH_BASE, {
-                "abstract": true
-            })
-            .state(stateNames.DASHBOARD, {
-                "url": "/dashboard",
+                "abstract": true,
                 "views": {
                     "appContainer@": {
-                        "controller": "dashboardController as dashboard",
-                        "templateUrl": "/modules/dashboard/dashboard.html"
-                    }
+                        "templateUrl": "/modules/authenticated/authenticated-layout.html"
+                      }
                 }
             })
             .state(stateNames.LOGIN, {
