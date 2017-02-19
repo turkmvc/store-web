@@ -1,3 +1,10 @@
-<div>
-  navigation
+<div class="ui segment">
+  <div class="ui secondary menu">
+    <a class="item"
+       ng-repeat="menuItem in storeNavigation.navigationMenuList track by menuItem.id"
+       ng-class="{active : storeNavigation.isActive(menuItem)}"
+       ng-bind="menuItem.name"
+       ng-click="storeNavigation.navigateToState(menuItem)">
+    </a>
+  </div>
 </div>

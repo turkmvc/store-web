@@ -18,5 +18,8 @@ angular.module("store.core")
 
         stateNames.LOGIN = stateNames.GUEST_BASE + ".login";
         stateNames.DASHBOARD = stateNames.AUTH_BASE + ".dashboard";
+        stateNames.COUNTY = stateNames.AUTH_BASE + ".county";
+        stateNames.PRODUCT = stateNames.AUTH_BASE + ".product";
+        stateNames.STORE = stateNames.AUTH_BASE + ".store";
 
 }]);

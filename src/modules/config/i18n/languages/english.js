@@ -15,8 +15,9 @@ angular.module("store.core").config(["i18nProvider", "supportedLanguages",
         "use strict";
 
         i18nProvider.translations[supportedLanguages.ENGLISH] = {
-            last_sync_date: "LAST SYNC DATE",
-            sync_button_text: "SYNC NOW",
-            show_requests: "SHOW REQUESTS"
+            dashboard: "Dashboard",
+            county: "County",
+            store: "Store",
+            product: "Product"
         }
     }]);
