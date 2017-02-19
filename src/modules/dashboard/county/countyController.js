@@ -1,5 +1,5 @@
-angular.module("store.dashboard").controller("countyController",
-    [,
+angular.module("store.county").controller("countyController",
+    [
         function () {
             "use strict";
 
