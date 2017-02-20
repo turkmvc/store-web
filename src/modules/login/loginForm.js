@@ -23,7 +23,6 @@ angular.module("store.login").directive("loginForm",
                 };
 
                 scope.login = function (credentials) {
-                  debugger;
                     if (!credentials || !validationUtil.nullCheck(credentials.username)) {
                         scope.showTooltip(".username-input");
                         return;

@@ -24,7 +24,7 @@ angular.module("store.navigation").controller("storeNavigationController",
                     name: i18n.translate("store"),
                     state: stateNames.STORE
                 }
-            ]
+            ];
 
             self.navigateToState = function (menuItem) {
               self.state = menuItem.state;

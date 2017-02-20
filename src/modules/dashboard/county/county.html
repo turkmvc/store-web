@@ -1,3 +1,14 @@
-<div>
-  COUNTY
+<div class="county-container">
+  <div class="county-set-page">
+  COUNTY SET
+
+  </div>
+  <div class="county-get-page">
+    <div class="ui list">
+      <div class="item"
+           ng-repeat="county in county.countyList track by county.id"
+           ng-bind="county.name">
+      </div>
+    </div>
+  </div>
 </div>
