@@ -35,6 +35,28 @@ angular.module("store.dashboard")
                         }
                     }
                 })
+                .state(stateNames.PRODUCT_CATEGORY, {
+                    "params": {
+                    },
+                    "url": "/productCategory",
+                    "views": {
+                        "contentContainer": {
+                            "controller": "productCategoryController as productCategory",
+                            "templateUrl": "/modules/dashboard/productCategory/product-category.html"
+                        }
+                    }
+                })
+                .state(stateNames.SUB_PRODUCT_CATEGORY, {
+                    "params": {
+                    },
+                    "url": "/productCategory",
+                    "views": {
+                        "contentContainer": {
+                            "controller": "subProductCategoryController as subProductCategory",
+                            "templateUrl": "/modules/dashboard/subProductCategory/sub-product-category.html"
+                        }
+                    }
+                })
                 .state(stateNames.STORE, {
                     "params": {
                     },
