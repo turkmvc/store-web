@@ -13,5 +13,6 @@ angular.module("store.core")
         stateNames.PRODUCT_CATEGORY = stateNames.AUTH_BASE + ".productCategory";
         stateNames.SUB_PRODUCT_CATEGORY = stateNames.AUTH_BASE + ".subProductCategory";
         stateNames.STORE = stateNames.AUTH_BASE + ".store";
+        stateNames.FIRM = stateNames.AUTH_BASE + ".firm";
 
 }]);

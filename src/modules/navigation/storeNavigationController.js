@@ -33,6 +33,11 @@ angular.module("store.navigation").controller("storeNavigationController",
                     id: 6,
                     name: i18n.translate("store"),
                     state: stateNames.STORE
+                },
+                {
+                    id: 7,
+                    name: i18n.translate("firm"),
+                    state: stateNames.FIRM
                 }
             ];
 

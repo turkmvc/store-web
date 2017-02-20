@@ -68,5 +68,16 @@ angular.module("store.dashboard")
                         }
                     }
                 })
+                .state(stateNames.FIRM, {
+                    "params": {
+                    },
+                    "url": "/store",
+                    "views": {
+                        "contentContainer": {
+                            "controller": "firmController as firm",
+                            "templateUrl": "/modules/dashboard/firm/firm.html"
+                        }
+                    }
+                })
         }
     ]);
