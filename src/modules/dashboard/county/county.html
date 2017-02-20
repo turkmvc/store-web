@@ -3,23 +3,42 @@
     <form class="ui form">
       <div class="field">
         <label>County ID</label>
-        <input type="text" name="county-id" placeholder="County ID">
+        <input type="text"
+               name="county-id"
+               ng-model="county.countyId"
+               placeholder="County ID">
       </div>
       <div class="field">
         <label>County Name</label>
-        <input type="text" name="county-name" placeholder="County Name">
+        <input type="text"
+               name="county-name"
+               ng-model="county.countyName"
+               placeholder="County Name">
       </div>
-      <button class="ui primary button" type="submit">Save</button>
-      <button class="ui primary button" type="submit">Update</button>
-      <button class="negative ui button" type="submit">Delete</button>
+      <button class="ui primary button"
+              type="submit"
+              ng-click="county.saveCounty()">
+              Save
+      </button>
+      <button class="ui primary button"
+              type="submit"
+              ng-click="county.updateCounty()">
+              Update
+      </button>
+      <button class="negative ui button"
+              type="submit"
+              ng-click="county.deleteCounty()">
+              Delete
+      </button>
     </form>
 
   </div>
   <div class="county-get-page">
     <div class="ui list">
       <div class="item"
-           ng-repeat="county in county.countyList track by county.id"
-           ng-bind="county.name">
+           ng-repeat="c in county.countyList track by c.id"
+           ng-click="county.setCounty(c)"
+           ng-bind="c.name">
       </div>
     </div>
   </div>
