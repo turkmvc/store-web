@@ -31,10 +31,10 @@ angular.module("store.login").directive("loginForm",
                     var request = {
                         name : "store",
                         method: "POST",
-                        url: "http://localhost:8080/login/",//TODO collect urls to constants
+                        url: "/login/",//TODO collect urls to constants
                         data: credentials,
                         headers: {
-                          "Content-Type": "application/json"
+                          "Content-Type": "application/json"me
                         }
                     };
 

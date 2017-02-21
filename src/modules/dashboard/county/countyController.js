@@ -32,7 +32,7 @@ angular.module("store.county").controller("countyController",
               var request = {
                   name : "store",
                   method: "UPDATE",
-                  url: "http://localhost:8080/secure/county",//TODO collect urls to constants
+                  url: "/secure/county",//TODO collect urls to constants
                   data: data
               };
 
@@ -51,7 +51,7 @@ angular.module("store.county").controller("countyController",
               var request = {
                   name : "store",
                   method: "DELETE",
-                  url: "http://localhost:8080/secure/county",//TODO collect urls to constants
+                  url: "/secure/county",//TODO collect urls to constants
                   data: data
               };
 
@@ -69,7 +69,7 @@ angular.module("store.county").controller("countyController",
               var request = {
                   name : "store",
                   method: "PUT",
-                  url: "http://localhost:8080/secure/county",//TODO collect urls to constants
+                  url: "/secure/county",//TODO collect urls to constants
                   data: data
               };
 
@@ -84,7 +84,7 @@ angular.module("store.county").controller("countyController",
                 var request = {
                     name : "store",
                     method: "GET",
-                    url: "http://localhost:8080/secure/county",//TODO collect urls to constants
+                    url: "/secure/county",//TODO collect urls to constants
                 };
 
                 var config = {
