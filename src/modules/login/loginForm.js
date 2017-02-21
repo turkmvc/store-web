@@ -34,7 +34,7 @@ angular.module("store.login").directive("loginForm",
                         url: "/login/",//TODO collect urls to constants
                         data: credentials,
                         headers: {
-                          "Content-Type": "application/json"me
+                          "Content-Type": "application/json"
                         }
                     };
 
