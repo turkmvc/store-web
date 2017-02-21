@@ -1,3 +1,45 @@
 <div class="data-setup-container">
-  FIRM
+  <div class="data-setup-set-page">
+    <form class="ui form">
+      <div class="field">
+        <label>Firm ID</label>
+        <input type="text"
+               name="firm-id"
+               ng-model="firm.firmId"
+               placeholder="Firm ID">
+      </div>
+      <div class="field">
+        <label>Firm Name</label>
+        <input type="text"
+               name="firm-name"
+               ng-model="firm.firmName"
+               placeholder="Firm Name">
+      </div>
+      <button class="ui primary button"
+              type="submit"
+              ng-click="firm.saveFirm()">
+              Save
+      </button>
+      <button class="ui primary button"
+              type="submit"
+              ng-click="firm.updateFirm()">
+              Update
+      </button>
+      <button class="negative ui button"
+              type="submit"
+              ng-click="firm.deleteFirm()">
+              Delete
+      </button>
+    </form>
+
+  </div>
+  <div class="data-setup-get-page">
+    <div class="ui list">
+      <div class="item"
+           ng-repeat="f in firm.firmList track by f.id"
+           ng-click="firm.setFirm(c)"
+           ng-bind="f.name">
+      </div>
+    </div>
+  </div>
 </div>
