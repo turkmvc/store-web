@@ -23,9 +23,6 @@ angular.module("store.core").config(
     ["$httpProvider",
         function ($httpProvider) {
             "use strict";
-            $httpProvider.defaults.useXDomain = true;
-            $httpProvider.defaults.withCredentials = true;
-
             $httpProvider.interceptors.push("sessionHttpInterceptor");
         }
     ]
