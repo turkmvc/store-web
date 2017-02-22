@@ -1,3 +1,98 @@
-<div>
-  STORE
+<div class="data-setup-container">
+  <div class="data-setup-set-page">
+    <form class="ui form">
+      <div class="field">
+        <label>Store ID</label>
+        <input type="text"
+               name="store-id"
+               ng-model="store.id"
+               placeholder="Store ID">
+      </div>
+      <div class="field">
+        <label>Store Name</label>
+        <input type="text"
+               name="store-name"
+               ng-model="store.name"
+               placeholder="Store Name">
+      </div>
+      <div class="field">
+        <label>Store Tax Number</label>
+        <input type="text"
+               name="store-taxNumber"
+               ng-model="store.taxNumber"
+               placeholder="Store Tax Number">
+      </div>
+      <div class="field">
+        <label>Store Mobile No</label>
+        <input type="text"
+               name="store-mobileNo"
+               ng-model="store.mobileNo"
+               placeholder="Store Mobile No">
+      </div>
+      <div class="field">
+        <label>Store Mobile No 2</label>
+        <input type="text"
+               name="store-mobileNo2"
+               ng-model="store.mobileNo2"
+               placeholder="Store Mobile No 2">
+      </div>
+      <div class="field">
+        <label>Store Email</label>
+        <input type="text"
+               name="store-email"
+               ng-model="store.email"
+               placeholder="Store Email">
+      </div>
+
+      <h4 class="ui horizontal divider header">
+        Address
+      </h4>
+
+      <div class="field">
+        <label>Store County</label>
+        <select class="ui search dropdown">
+          <option value="county.id" ng-repeat="county in store.countyList track by county.id">{{county.name}}</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Store Address</label>
+        <input type="text"
+               name="store-address"
+               ng-model="store.address"
+               placeholder="Store Address">
+      </div>
+      <div class="field">
+        <label>Store Address Desciption</label>
+        <input type="text"
+               name="store-address-desc"
+               ng-model="store.addressDesc"
+               placeholder="Store Address Description">
+      </div>
+
+      <button class="ui primary button"
+              type="submit"
+              ng-click="store.saveStore()">
+              Save
+      </button>
+      <button class="ui primary button"
+              type="submit"
+              ng-click="store.updateStore()">
+              Update
+      </button>
+      <button class="negative ui button"
+              type="submit"
+              ng-click="store.deleteStore()">
+              Delete
+      </button>
+    </form>
+
+  </div>
+  <div class="data-setup-get-page">
+    <div class="ui list">
+      <div class="item"
+           ng-repeat="s in store.storeList track by s.id"
+           ng-bind="s.name">
+      </div>
+    </div>
+  </div>
 </div>
