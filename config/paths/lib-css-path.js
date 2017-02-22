@@ -1,5 +1,5 @@
 var libCssList = [
-    "bootstrap/dist/css/bootstrap.min.css"
+    "semantic-ui/dist/semantic.css"
 ];
 
 var basePath = "lib/";
