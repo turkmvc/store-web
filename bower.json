@@ -4,7 +4,14 @@
   "dependencies": {
     "angular": "^1.5.0-beta.2",
     "angular-ui-router": "0.2.15",
+<<<<<<< Updated upstream
     "jquery": "~2.1.4"
+=======
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.6",
+    "angular-bootstrap": "~1.1.1",
+    "semantic": "semantic-ui#^2.2.9"
+>>>>>>> Stashed changes
   },
   "devDependencies": {
     "es5-shim": "~4.4.0",
