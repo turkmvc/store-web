@@ -49,7 +49,7 @@ angular.module("store.dashboard")
                 .state(stateNames.SUB_PRODUCT_CATEGORY, {
                     "params": {
                     },
-                    "url": "/productCategory",
+                    "url": "/subProductCategory",
                     "views": {
                         "contentContainer": {
                             "controller": "subProductCategoryController as subProductCategory",
