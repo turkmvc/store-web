@@ -1,4 +1,4 @@
 {
-  "https-proxy": "",
+  "https-proxy": "http://proxy.pozitron.com:3128",
   "directory": "lib"
 }
