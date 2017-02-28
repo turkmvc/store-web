@@ -47,12 +47,22 @@
       <h4 class="ui horizontal divider header">
         Address
       </h4>
-
       <div class="field">
         <div class="ui sub header">Store County</div>
-        <select class="ui search dropdown">
-          <option value="county.id" ng-repeat="county in store.countyList track by county.id">{{county.name}}</option>
-        </select>
+        <div class="ui selection dropdown">
+          <input type="hidden" name="gender">
+          <i class="dropdown icon"></i>
+          <div class="default text">County</div>
+          <div class="menu">
+            <div class="item"
+                 data-value="{{county.id}}"
+                 data-text="{{county.name}}"
+                 ng-repeat="county in store.countyList track by county.id">
+              <!-- <i class="male icon"></i> -->
+              {{county.name}}
+            </div>
+          </div>
+        </div>
       </div>
       <div class="field">
         <label>Store Address</label>
