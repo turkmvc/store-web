@@ -1,6 +1,6 @@
 angular.module("store.productCategory").controller("productCategoryController",
-    ["storeApi",
-        function (storeApi) {
+    ["productCategoryService",
+        function (productCategoryService) {
             "use strict";
             var self = this;
             self.productCategoryList = [];
@@ -30,18 +30,12 @@ angular.module("store.productCategory").controller("productCategoryController",
                 name: self.productCategoryName,
                 description: self.productCategoryDescription
               };
-              var request = {
-                  name : "store",
-                  method: "UPDATE",
-                  url: "/secure/productCategory",//TODO collect urls to constants
-                  data: data
-              };
 
               var config = {
                   "onSuccess": self.successCRUDProductCategory,
                   "onError": self.errorProductCategory
               };
-              storeApi.makeRequest(request, config);
+              productCategoryService.updateProductCategory(config, data);
             }
 
             self.deleteProductCategory = function () {
@@ -49,50 +43,32 @@ angular.module("store.productCategory").controller("productCategoryController",
                 id: self.productCategoryId,
                 name: self.productCategoryName
               };
-              var request = {
-                  name : "store",
-                  method: "DELETE",
-                  url: "/secure/productCategory",//TODO collect urls to constants
-                  data: data
-              };
 
               var config = {
                   "onSuccess": self.successCRUDProductCategory,
                   "onError": self.errorProductCategory
               };
-              storeApi.makeRequest(request, config);
+              productCategoryService.deleteProductCategory(config, data);
             }
 
             self.saveProductCategory = function () {
               var data = {
                 name: self.productCategoryName
               };
-              var request = {
-                  name : "store",
-                  method: "PUT",
-                  url: "/secure/productCategory",//TODO collect urls to constants
-                  data: data
-              };
 
               var config = {
                   "onSuccess": self.successCRUDProductCategory,
                   "onError": self.errorProductCategory
               };
-              storeApi.makeRequest(request, config);
+              productCategoryService.saveProductCategory(config, data);
             }
 
             self.getProductCategoryList = function () {
-                var request = {
-                    name : "store",
-                    method: "GET",
-                    url: "/secure/productCategory",//TODO collect urls to constants
-                };
-
                 var config = {
                     "onSuccess": self.successGetProductCategory,
                     "onError": self.errorProductCategory
                 };
-                storeApi.makeRequest(request, config);
+                productCategoryService.getProductCategoryList(config, data);
 
             };
 

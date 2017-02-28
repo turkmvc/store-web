@@ -1,6 +1,6 @@
 angular.module("store.subProductCategory").controller("subProductCategoryController",
-    [
-        function () {
+    ["productCategoryService", "subProductCategoryService",
+        function (productCategoryService, subProductCategoryService) {
             "use strict";
             var self = this;
             self.productCategoryList = [];
@@ -31,18 +31,12 @@ angular.module("store.subProductCategory").controller("subProductCategoryControl
                 name: self.subProductCategoryName,
                 description: self.subProductCategoryDescription
               };
-              var request = {
-                  name : "store",
-                  method: "UPDATE",
-                  url: "/secure/subProductCategory",//TODO collect urls to constants
-                  data: data
-              };
 
               var config = {
                   "onSuccess": self.successCRUDSubProductCategory,
                   "onError": self.errorSubProductCategory
               };
-              storeApi.makeRequest(request, config);
+              subProductCategoryService.updateSubProductCategory(config, data);
             }
 
             self.deleteSubProductCategory = function () {
@@ -50,18 +44,12 @@ angular.module("store.subProductCategory").controller("subProductCategoryControl
                 id: self.subProductCategoryId,
                 name: self.subProductCategoryName
               };
-              var request = {
-                  name : "store",
-                  method: "DELETE",
-                  url: "/secure/subProductCategory",//TODO collect urls to constants
-                  data: data
-              };
 
               var config = {
                   "onSuccess": self.successCRUDSubProductCategory,
                   "onError": self.errorSubProductCategory
               };
-              storeApi.makeRequest(request, config);
+              subProductCategoryService.deleteSubProductCategory(config, data);
             }
 
             self.saveSubProductCategory = function () {
@@ -69,32 +57,21 @@ angular.module("store.subProductCategory").controller("subProductCategoryControl
                 name: self.subProductCategoryName,
                 description: self.subProductCategoryDescription
               };
-              var request = {
-                  name : "store",
-                  method: "PUT",
-                  url: "/secure/subProductCategory",//TODO collect urls to constants
-                  data: data
-              };
 
               var config = {
                   "onSuccess": self.successCRUDSubProductCategory,
                   "onError": self.errorSubProductCategory
               };
-              storeApi.makeRequest(request, config);
+              subProductCategoryService.saveSubProductCategory(config, data);
             }
 
             self.getSubProductCategoryList = function () {
-                var request = {
-                    name : "store",
-                    method: "GET",
-                    url: "/secure/subProductCategory",//TODO collect urls to constants
-                };
 
                 var config = {
                     "onSuccess": self.successGetSubProductCategory,
                     "onError": self.errorSubProductCategory
                 };
-                storeApi.makeRequest(request, config);
+                subProductCategoryService.getSubProductCategoryList(config);
 
             };
 
@@ -103,17 +80,11 @@ angular.module("store.subProductCategory").controller("subProductCategoryControl
             }
 
             self.getProductCategoryList = function () {
-                var request = {
-                    name : "store",
-                    method: "GET",
-                    url: "/secure/productCategory",//TODO collect urls to constants
-                };
-
                 var config = {
                     "onSuccess": self.successGetProductCategory,
                     "onError": self.errorSubProductCategory
                 };
-                storeApi.makeRequest(request, config);
+                productCategoryService.getProductCategoryList(config);
 
             };
 

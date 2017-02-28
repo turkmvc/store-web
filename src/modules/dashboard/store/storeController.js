@@ -1,6 +1,6 @@
 angular.module("store.store").controller("storeController",
-    ["storeApi",
-        function (storeApi) {
+    ["storeService", "countyService",
+        function (storeService, countyService) {
             "use strict";
             var self = this;
             self.countyList = [];
@@ -12,17 +12,11 @@ angular.module("store.store").controller("storeController",
               self.countyList = data;
             }
             self.getCountyList = function () {
-                var request = {
-                    name : "store",
-                    method: "GET",
-                    url: "/secure/county",//TODO collect urls to constants
-                };
-
                 var config = {
                     "onSuccess": self.successGetCounty,
                     "onError": self.errorStore
                 };
-                storeApi.makeRequest(request, config);
+                countyService.getCountyList(config);
 
             };
 
@@ -48,18 +42,12 @@ angular.module("store.store").controller("storeController",
                 id: self.storeId,
                 name: self.storeName
               };
-              var request = {
-                  name : "store",
-                  method: "UPDATE",
-                  url: "/secure/store",//TODO collect urls to constants
-                  data: data
-              };
 
               var config = {
                   "onSuccess": self.successCRUDStore,
                   "onError": self.errorStore
               };
-              storeApi.makeRequest(request, config);
+              storeService.updateStore(config, data);
             }
 
             self.deleteStore = function () {
@@ -67,50 +55,31 @@ angular.module("store.store").controller("storeController",
                 id: self.storeId,
                 name: self.storeName
               };
-              var request = {
-                  name : "store",
-                  method: "DELETE",
-                  url: "/secure/store",//TODO collect urls to constants
-                  data: data
-              };
 
               var config = {
                   "onSuccess": self.successCRUDStore,
                   "onError": self.errorStore
               };
-              storeApi.makeRequest(request, config);
+              storeService.deleteStore(config, data);
             }
 
             self.saveStore = function () {
               var data = {
                 name: self.storeName
               };
-              var request = {
-                  name : "store",
-                  method: "PUT",
-                  url: "/secure/store",//TODO collect urls to constants
-                  data: data
-              };
-
               var config = {
                   "onSuccess": self.successCRUDStore,
                   "onError": self.errorStore
               };
-              storeApi.makeRequest(request, config);
+              storeService.saveStore(config, data);
             }
 
             self.getStoreList = function () {
-                var request = {
-                    name : "store",
-                    method: "GET",
-                    url: "/secure/store",//TODO collect urls to constants
-                };
-
                 var config = {
                     "onSuccess": self.successGetStore,
                     "onError": self.errorStore
                 };
-                storeApi.makeRequest(request, config);
+                storeService.getStoreList(config);
 
             };
 

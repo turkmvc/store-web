@@ -1,6 +1,6 @@
 angular.module("store.firm").controller("firmController",
-    ["storeApi",
-        function (storeApi) {
+    ["firmService",
+        function (firmService) {
             "use strict";
             var self = this;
             self.firmList = [];
@@ -29,18 +29,12 @@ angular.module("store.firm").controller("firmController",
                 id: self.firmId,
                 name: self.firmName
               };
-              var request = {
-                  name : "store",
-                  method: "UPDATE",
-                  url: "/secure/firm",//TODO collect urls to constants
-                  data: data
-              };
 
               var config = {
                   "onSuccess": self.successCRUDFirm,
                   "onError": self.errorFirm
               };
-              storeApi.makeRequest(request, config);
+              firmService.updateFirm(config, data);
             }
 
             self.deleteFirm = function () {
@@ -48,50 +42,32 @@ angular.module("store.firm").controller("firmController",
                 id: self.firmId,
                 name: self.firmName
               };
-              var request = {
-                  name : "store",
-                  method: "DELETE",
-                  url: "/secure/firm",//TODO collect urls to constants
-                  data: data
-              };
-
               var config = {
                   "onSuccess": self.successCRUDFirm,
                   "onError": self.errorFirm
               };
-              storeApi.makeRequest(request, config);
+              firmService.deleteFirm(config, data);
             }
 
             self.saveFirm = function () {
               var data = {
                 name: self.firmName
               };
-              var request = {
-                  name : "store",
-                  method: "PUT",
-                  url: "/secure/firm",//TODO collect urls to constants
-                  data: data
-              };
 
               var config = {
                   "onSuccess": self.successCRUDFirm,
                   "onError": self.errorFirm
               };
-              storeApi.makeRequest(request, config);
+              firmService.saveFirm(config, data);
             }
 
             self.getFirmList = function () {
-                var request = {
-                    name : "store",
-                    method: "GET",
-                    url: "/secure/firm",//TODO collect urls to constants
-                };
 
                 var config = {
                     "onSuccess": self.successGetFirm,
                     "onError": self.errorFirm
                 };
-                storeApi.makeRequest(request, config);
+                firmService.getFirmList(config, data);
 
             };
 
