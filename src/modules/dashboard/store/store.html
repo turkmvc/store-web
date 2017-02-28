@@ -47,6 +47,7 @@
       <h4 class="ui horizontal divider header">
         Address
       </h4>
+
       <div class="field">
         <div class="ui sub header">Store County</div>
         <div class="ui selection dropdown">
@@ -57,6 +58,7 @@
             <div class="item"
                  data-value="{{county.id}}"
                  data-text="{{county.name}}"
+                 ng-model="store.county"
                  ng-repeat="county in store.countyList track by county.id">
               <!-- <i class="male icon"></i> -->
               {{county.name}}

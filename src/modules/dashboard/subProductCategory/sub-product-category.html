@@ -1,3 +1,69 @@
-<div>
-  SUB PRODUCT CATEGORY
+<div class="data-setup-container">
+  <div class="data-setup-set-page">
+    <form class="ui form">
+      <div class="field">
+        <div class="ui sub header">Product Category List</div>
+        <div class="ui selection dropdown">
+          <input type="hidden" name="gender">
+          <i class="dropdown icon"></i>
+          <div class="default text">Porduct Category</div>
+          <div class="menu">
+            <div class="item"
+                 data-value="{{product.id}}"
+                 data-text="{{product.name}}"
+                 ng-model="subProductCategory.productCategory"
+                 ng-repeat="product in subProductCategory.productCategoryList track by product.id">
+              {{product.name}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label>Sub Product Category ID</label>
+        <input type="text"
+               name="subProductCategory-id"
+               ng-model="subProductCategory.subProductCategoryId"
+               placeholder="Sub Product Category ID">
+      </div>
+      <div class="field">
+        <label>Sub Product Category Name</label>
+        <input type="text"
+               name="subProductCategory-name"
+               ng-model="subProductCategory.subProductCategoryName"
+               placeholder="Sub Product Category Name">
+      </div>
+      <div class="field">
+        <label>Sub Product Category Description</label>
+        <input type="text"
+               name="subProduct-category-description"
+               ng-model="subProductCategory.subProductCategoryDescription"
+               placeholder="Sub Product Category Description">
+      </div>
+      <button class="ui primary button"
+              type="submit"
+              ng-click="subProductCategory.saveSubProductCategory()">
+              Save
+      </button>
+      <button class="ui primary button"
+              type="submit"
+              ng-click="subProductCategory.updateSubProductCategory()">
+              Update
+      </button>
+      <button class="negative ui button"
+              type="submit"
+              ng-click="subProductCategory.deleteSubProductCategory()">
+              Delete
+      </button>
+    </form>
+
+  </div>
+  <div class="data-setup-get-page">
+    <div class="ui list">
+      <div class="item"
+           ng-repeat="pc in subProductCategory.subProductCategoryList track by pc.id"
+           ng-click="subProductCategory.setSubProductCategory(pc)"
+           ng-bind="pc.name">
+      </div>
+    </div>
+  </div>
 </div>
