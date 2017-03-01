@@ -5,13 +5,9 @@ angular.module("store.county").service("countyService",
             var self = this;
 
             self.updateCounty = function (config, data) {
-              var data = {
-                id: self.countyId,
-                name: self.countyName
-              };
               var request = {
                   name : "store",
-                  method: "UPDATE",
+                  method: "POST",
                   url: "/secure/county",//TODO collect urls to constants
                   data: data
               };

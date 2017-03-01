@@ -11,7 +11,7 @@ angular.module("store.productCategory").service("productCategoryService",
               };
               var request = {
                   name : "store",
-                  method: "UPDATE",
+                  method: "POST",
                   url: "/secure/productCategory",//TODO collect urls to constants
                   data: data
               };

@@ -11,7 +11,7 @@ angular.module("store.firm").service("firmService",
               };
               var request = {
                   name : "store",
-                  method: "UPDATE",
+                  method: "POST",
                   url: "/secure/firm",//TODO collect urls to constants
                   data: data
               };
