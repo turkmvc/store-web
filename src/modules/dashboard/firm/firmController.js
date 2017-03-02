@@ -1,8 +1,9 @@
 angular.module("store.firm").controller("firmController",
-    ["firmService",
-        function (firmService) {
+    ["firmService", "firmTypeService",
+        function (firmService, firmTypeService) {
             "use strict";
             var self = this;
+            self.firmTypeList = [];
             self.firmList = [];
             self.firmId = "";
             self.firmName = "";
@@ -22,12 +23,14 @@ angular.module("store.firm").controller("firmController",
             self.setFirm = function (firm) {
               self.firmId = firm.id;
               self.firmName = firm.name;
+              self.selectedFirmType = firm.firmType;
             }
 
             self.updateFirm = function () {
               var data = {
                 id: self.firmId,
-                name: self.firmName
+                name: self.firmName,
+                firmType: self.selectedFirmType
               };
 
               var config = {
@@ -40,7 +43,8 @@ angular.module("store.firm").controller("firmController",
             self.deleteFirm = function () {
               var data = {
                 id: self.firmId,
-                name: self.firmName
+                name: self.firmName,
+                firmType: self.selectedFirmType
               };
               var config = {
                   "onSuccess": self.successCRUDFirm,
@@ -51,7 +55,8 @@ angular.module("store.firm").controller("firmController",
 
             self.saveFirm = function () {
               var data = {
-                name: self.firmName
+                name: self.firmName,
+                firmType: self.selectedFirmType
               };
 
               var config = {
@@ -71,7 +76,25 @@ angular.module("store.firm").controller("firmController",
 
             };
 
-            self.getFirmList();
+            self.successGetFirmType = function (data) {
+              self.firmTypeList = data;
+              self.selectedFirmType = data[0];
+            }
+
+            self.selectFirmType = function (firmType) {
+              self.selectedFirmType = firmType;
+            }
+
+            self.init = function () {
+              self.getFirmList();
+              var config = {
+                  "onSuccess": self.successGetFirmType,
+                  "onError": self.errorFirm
+              };
+              firmTypeService.getFirmTypeList(config);
+            }
+
+            self.init();
 
         }
     ]);

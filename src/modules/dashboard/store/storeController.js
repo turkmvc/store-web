@@ -84,8 +84,6 @@ angular.module("store.store").controller("storeController",
             };
 
             self.init = function () {
-
-              $(".ui.dropdown").dropdown();
               self.getCountyList();
               self.getStoreList();
             }

@@ -1,6 +1,8 @@
 angular.module("store.dashboard")
     .controller("dashboardController",
-        ["$http", "$scope",
-            function ($http, $scope) {
-                
+        ["$rootScope",
+            function ($rootScope) {
+              $rootScope.$on("$viewContentLoaded", function () {
+                $(".dropdown").dropdown();
+              });
             }]);

@@ -71,7 +71,7 @@ angular.module("store.dashboard")
                 .state(stateNames.FIRM, {
                     "params": {
                     },
-                    "url": "/store",
+                    "url": "/firm",
                     "views": {
                         "contentContainer": {
                             "controller": "firmController as firm",
