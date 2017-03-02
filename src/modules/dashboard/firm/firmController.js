@@ -67,7 +67,7 @@ angular.module("store.firm").controller("firmController",
                     "onSuccess": self.successGetFirm,
                     "onError": self.errorFirm
                 };
-                firmService.getFirmList(config, data);
+                firmService.getFirmList(config);
 
             };
 

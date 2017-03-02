@@ -9,6 +9,7 @@ angular.module("store.core").config(["i18nProvider", "supportedLanguages",
             product_category: "Product Category",
             sub_product_category: "Sub Product Category",
             product: "Product",
+            firm_type: "Firm Type",
             firm: "Firm"
         }
     }]);
