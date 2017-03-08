@@ -21,15 +21,15 @@
           <input type="hidden"
                  name="firmType">
           <i class="dropdown icon"></i>
-          <div class="default text">Firm Types</div>
+          <div class="default text" data-value="firm.selectedFirmType.id">
+            {{firm.selectedFirmType.name}}
+          </div>
           <div class="menu">
             <div class="item"
                  data-value="{{firmType.id}}"
                  data-text="{{firmType.name}}"
-                 ng-model="firm.selectedFirmType"
                  ng-click="firm.selectFirmType(firmType)"
                  ng-repeat="firmType in firm.firmTypeList track by firmType.id">
-              <!-- <i class="male icon"></i> -->
               {{firmType.name}}
             </div>
           </div>

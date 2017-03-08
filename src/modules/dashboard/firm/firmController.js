@@ -7,6 +7,10 @@ angular.module("store.firm").controller("firmController",
             self.firmList = [];
             self.firmId = "";
             self.firmName = "";
+            self.selectedFirmType = {
+              id: -1,
+              name: "Firm Types"
+            };
 
             self.successGetFirm = function (data) {
               self.firmList = data;
@@ -78,7 +82,6 @@ angular.module("store.firm").controller("firmController",
 
             self.successGetFirmType = function (data) {
               self.firmTypeList = data;
-              self.selectedFirmType = data[0];
             }
 
             self.selectFirmType = function (firmType) {
