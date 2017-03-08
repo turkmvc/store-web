@@ -34,7 +34,6 @@ angular.module("store.firmType").controller("firmTypeController",
                   "onSuccess": self.successCRUDFirmType,
                   "onError": self.errorFirmType
               };
-              debugger;
               firmTypeService.updateFirmType(config, data);
             }
 

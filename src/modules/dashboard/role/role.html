@@ -1,0 +1,59 @@
+<div class="data-setup-container">
+  <div class="data-setup-set-page">
+    <form class="ui form">
+      <div class="field">
+        <label>Role ID</label>
+        <input type="number"
+               name="role-id"
+               ng-model="role.roleId"
+               placeholder="Role ID">
+      </div>
+      <div class="field">
+        <label>Role Name</label>
+        <input type="text"
+               name="role-name"
+               ng-model="role.roleName"
+               placeholder="Role Name">
+      </div>
+      <div class="field">
+        <label>Role Description</label>
+        <input type="text"
+               name="role-desc"
+               ng-model="role.roleDescription"
+               placeholder="Role Description">
+      </div>
+      <div class="field">
+        <label>Role Abbreviation</label>
+        <input type="text"
+               name="role-abbr"
+               ng-model="role.roleAbbreviation"
+               placeholder="Role Abbreviation">
+      </div>
+      <button class="ui primary button"
+              type="submit"
+              ng-click="role.saveRole()">
+              Save
+      </button>
+      <button class="ui primary button"
+              type="submit"
+              ng-click="role.updateRole()">
+              Update
+      </button>
+      <button class="negative ui button"
+              type="submit"
+              ng-click="role.deleteRole()">
+              Delete
+      </button>
+    </form>
+
+  </div>
+  <div class="data-setup-get-page">
+    <div class="ui list">
+      <div class="item"
+           ng-repeat="r in role.roleList track by r.id"
+           ng-click="role.setRole(r)"
+           ng-bind="r.name">
+      </div>
+    </div>
+  </div>
+</div>

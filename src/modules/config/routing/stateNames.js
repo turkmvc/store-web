@@ -8,6 +8,7 @@ angular.module("store.core")
 
         stateNames.LOGIN = stateNames.GUEST_BASE + ".login";
         stateNames.DASHBOARD = stateNames.AUTH_BASE + ".dashboard";
+        stateNames.ROLE = stateNames.AUTH_BASE + ".role";
         stateNames.COUNTY = stateNames.AUTH_BASE + ".county";
         stateNames.PRODUCT = stateNames.AUTH_BASE + ".product";
         stateNames.PRODUCT_CATEGORY = stateNames.AUTH_BASE + ".productCategory";

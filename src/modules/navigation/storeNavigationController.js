@@ -11,36 +11,41 @@ angular.module("store.navigation").controller("storeNavigationController",
                 },
                 {
                     id: 2,
+                    name: i18n.translate("role"),
+                    state: stateNames.ROLE
+                },
+                {
+                    id: 3,
                     name: i18n.translate("county"),
                     state: stateNames.COUNTY
                 },
                 {
-                    id: 3,
+                    id: 4,
                     name: i18n.translate("product"),
                     state: stateNames.PRODUCT
                 },
                 {
-                    id: 4,
+                    id: 5,
                     name: i18n.translate("product_category"),
                     state: stateNames.PRODUCT_CATEGORY
                 },
                 {
-                    id: 5,
+                    id: 6,
                     name: i18n.translate("sub_product_category"),
                     state: stateNames.SUB_PRODUCT_CATEGORY
                 },
                 {
-                    id: 6,
+                    id: 7,
                     name: i18n.translate("store"),
                     state: stateNames.STORE
                 },
                 {
-                    id: 7,
+                    id: 8,
                     name: i18n.translate("firm"),
                     state: stateNames.FIRM
                 },
                 {
-                    id: 8,
+                    id: 9,
                     name: i18n.translate("firm_type"),
                     state: stateNames.FIRM_TYPE
                 }

@@ -15,6 +15,15 @@ angular.module("store.dashboard")
                         }
                     }
                 })
+                .state(stateNames.ROLE, {
+                    "url": "/role",
+                    "views": {
+                        "contentContainer": {
+                            "controller": "roleController as role",
+                            "templateUrl": "/modules/dashboard/role/role.html"
+                        }
+                    }
+                })
                 .state(stateNames.COUNTY, {
                     "url": "/county",
                     "views": {
