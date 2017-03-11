@@ -1,14 +1,10 @@
 angular.module("store.productCategory").service("productCategoryService",
-    ["productCategoryApi",
-        function (productCategoryApi) {
+    ["storeApi",
+        function (storeApi) {
 
             var self = this;
 
             self.updateProductCategory = function (config, data) {
-              var data = {
-                id: self.productCategoryId,
-                name: self.productCategoryName
-              };
               var request = {
                   name : "store",
                   method: "POST",
@@ -16,7 +12,7 @@ angular.module("store.productCategory").service("productCategoryService",
                   data: data
               };
 
-              productCategoryApi.makeRequest(request, config);
+              storeApi.makeRequest(request, config);
             }
 
             self.deleteProductCategory = function (config, data) {
@@ -26,7 +22,7 @@ angular.module("store.productCategory").service("productCategoryService",
                   url: "/secure/productCategory",//TODO collect urls to constants
                   data: data
               };
-              productCategoryApi.makeRequest(request, config);
+              storeApi.makeRequest(request, config);
             }
 
             self.saveProductCategory = function (config, data) {
@@ -36,7 +32,7 @@ angular.module("store.productCategory").service("productCategoryService",
                   url: "/secure/productCategory",//TODO collect urls to constants
                   data: data
               };
-              productCategoryApi.makeRequest(request, config);
+              storeApi.makeRequest(request, config);
             }
 
             self.getProductCategoryList = function (config) {
@@ -45,7 +41,7 @@ angular.module("store.productCategory").service("productCategoryService",
                     method: "GET",
                     url: "/secure/productCategory",//TODO collect urls to constants
                 };
-                productCategoryApi.makeRequest(request, config);
+                storeApi.makeRequest(request, config);
             };
           }
 

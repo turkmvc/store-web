@@ -6,7 +6,7 @@ angular.module("store.productCategory").directive("productCategory", function ()
         replace: true,
         controller: "productCategoryController",
         controllerAs: "productCategory",
-        templateUrl: "/modules/dashboard/productCategory/productCategory.html"
+        templateUrl: "/modules/dashboard/productCategory/product-category.html"
     };
 
 });

@@ -8,6 +8,7 @@ angular.module("store.productCategory").controller("productCategoryController",
             self.productCategoryName = "";
 
             self.successGetProductCategory = function (data) {
+              debugger;
               self.productCategoryList = data;
             }
 
@@ -20,8 +21,10 @@ angular.module("store.productCategory").controller("productCategoryController",
             }
 
             self.setProductCategory = function (productCategory) {
+              debugger;
               self.productCategoryId = productCategory.id;
               self.productCategoryName = productCategory.name;
+              self.productCategoryDescription = productCategory.description;
             }
 
             self.updateProductCategory = function () {
@@ -41,7 +44,8 @@ angular.module("store.productCategory").controller("productCategoryController",
             self.deleteProductCategory = function () {
               var data = {
                 id: self.productCategoryId,
-                name: self.productCategoryName
+                name: self.productCategoryName,
+                description: self.productCategoryDescription
               };
 
               var config = {
@@ -53,7 +57,8 @@ angular.module("store.productCategory").controller("productCategoryController",
 
             self.saveProductCategory = function () {
               var data = {
-                name: self.productCategoryName
+                name: self.productCategoryName,
+                description: self.productCategoryDescription
               };
 
               var config = {
@@ -68,7 +73,7 @@ angular.module("store.productCategory").controller("productCategoryController",
                     "onSuccess": self.successGetProductCategory,
                     "onError": self.errorProductCategory
                 };
-                productCategoryService.getProductCategoryList(config, data);
+                productCategoryService.getProductCategoryList(config);
 
             };
 
