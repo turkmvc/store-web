@@ -6,6 +6,11 @@ angular.module("store.productCategory").controller("productCategoryController",
             self.productCategoryList = [];
             self.productCategoryId = "";
             self.productCategoryName = "";
+            debugger;
+            self.selectedProductCategory = {
+              id: -1,
+              name: "Select product Category"
+            }
 
             self.successGetProductCategory = function (data) {
               debugger;
@@ -20,18 +25,23 @@ angular.module("store.productCategory").controller("productCategoryController",
 
             }
 
+            self.selectProductCategory = function (category) {
+              self.selectedProductCategory = category;
+            }
+
             self.setProductCategory = function (productCategory) {
-              debugger;
               self.productCategoryId = productCategory.id;
               self.productCategoryName = productCategory.name;
               self.productCategoryDescription = productCategory.description;
+              self.selectedProductCategory = productCategory.parentCategory;
             }
 
             self.updateProductCategory = function () {
               var data = {
                 id: self.productCategoryId,
                 name: self.productCategoryName,
-                description: self.productCategoryDescription
+                description: self.productCategoryDescription,
+                parentCategory: self.selectedProductCategory
               };
 
               var config = {
@@ -45,7 +55,8 @@ angular.module("store.productCategory").controller("productCategoryController",
               var data = {
                 id: self.productCategoryId,
                 name: self.productCategoryName,
-                description: self.productCategoryDescription
+                description: self.productCategoryDescription,
+                parentCategory: self.selectedProductCategory
               };
 
               var config = {
@@ -56,9 +67,11 @@ angular.module("store.productCategory").controller("productCategoryController",
             }
 
             self.saveProductCategory = function () {
+              debugger;
               var data = {
                 name: self.productCategoryName,
-                description: self.productCategoryDescription
+                description: self.productCategoryDescription,
+                parentCategory: self.selectedProductCategory
               };
 
               var config = {
