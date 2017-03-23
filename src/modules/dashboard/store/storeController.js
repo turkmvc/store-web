@@ -10,8 +10,6 @@ angular.module("store.store").controller("storeController",
             self.storeName = "";
 
             self.successGetCounty = function (data) {
-              // debugger;
-              // self.countyList = data;
             }
             self.getCountyList = function () {
                 var config = {
@@ -20,7 +18,7 @@ angular.module("store.store").controller("storeController",
                 };
                 self.countyList = countyService.getCountyList(config).promise;
 
-                self.countyList.then(function(resp) {
+                self.countyList.then(function (resp) {
                     debugger;
                     self.countyList = resp;
                 });
