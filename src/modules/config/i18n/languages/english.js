@@ -5,6 +5,7 @@ angular.module("store.core").config(["i18nProvider", "supportedLanguages",
         i18nProvider.translations[supportedLanguages.ENGLISH] = {
             dashboard: "Dashboard",
             role: "Role",
+            user: "User",
             county: "County",
             store: "Store",
             product_category: "Product Category",

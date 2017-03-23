@@ -47,9 +47,9 @@
       <h4 class="ui horizontal divider header">
         Address
       </h4>
-
-      <div class="field">
-        <div class="ui sub header">Store County</div>
+      <!-- <div class="field"> -->
+        <address county-list="store.countyList"></address>
+        <!-- <div class="ui sub header">Store County</div>
         <div class="ui selection dropdown">
           <input type="hidden" name="gender">
           <i class="dropdown icon"></i>
@@ -60,7 +60,6 @@
                  data-text="{{county.name}}"
                  ng-model="store.county"
                  ng-repeat="county in store.countyList track by county.id">
-              <!-- <i class="male icon"></i> -->
               {{county.name}}
             </div>
           </div>
@@ -79,7 +78,7 @@
                name="store-address-desc"
                ng-model="store.addressDesc"
                placeholder="Store Address Description">
-      </div>
+      </div> -->
 
       <button class="ui primary button"
               type="submit"
@@ -97,7 +96,6 @@
               Delete
       </button>
     </form>
-
   </div>
   <div class="data-setup-get-page">
     <div class="ui list">

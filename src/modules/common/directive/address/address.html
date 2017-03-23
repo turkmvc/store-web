@@ -1,0 +1,33 @@
+<div>
+  <div class="field">
+    <div class="ui sub header">County</div>
+    <div class="ui selection dropdown">
+      <input type="hidden" name="gender">
+      <i class="dropdown icon"></i>
+      <div class="default text">County</div>
+      <div class="menu">
+        <div class="item"
+             data-value="{{county.id}}"
+             data-text="{{county.name}}"
+             ng-model="address.county"
+             ng-repeat="county in countyList track by county.id">
+          {{county.name}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <label>Address</label>
+    <input type="text"
+           name="address"
+           ng-model="address.address"
+           placeholder="Address">
+  </div>
+  <div class="field">
+    <label>Address Desciption</label>
+    <input type="text"
+           name="address-desc"
+           ng-model="address.addressDesc"
+           placeholder="Address Description">
+  </div>
+</div>

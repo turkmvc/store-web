@@ -16,23 +16,23 @@ angular.module("store.navigation").controller("storeNavigationController",
                 },
                 {
                     id: 3,
+                    name: i18n.translate("user"),
+                    state: stateNames.USER
+                },
+                {
+                    id: 4,
                     name: i18n.translate("county"),
                     state: stateNames.COUNTY
                 },
                 {
-                    id: 4,
+                    id: 5,
                     name: i18n.translate("product"),
                     state: stateNames.PRODUCT
                 },
                 {
-                    id: 5,
+                    id: 6,
                     name: i18n.translate("product_category"),
                     state: stateNames.PRODUCT_CATEGORY
-                },
-                {
-                    id: 6,
-                    name: i18n.translate("sub_product_category"),
-                    state: stateNames.SUB_PRODUCT_CATEGORY
                 },
                 {
                     id: 7,

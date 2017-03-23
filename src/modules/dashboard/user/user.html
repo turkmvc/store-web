@@ -1,0 +1,45 @@
+<div class="data-setup-container">
+  <div class="data-setup-set-page">
+    <form class="ui form">
+      <div class="field">
+        <label>User ID</label>
+        <input type="text"
+               name="user-id"
+               ng-model="user.userId"
+               placeholder="User ID">
+      </div>
+      <div class="field">
+        <label>User Name</label>
+        <input type="text"
+               name="user-name"
+               ng-model="user.userName"
+               placeholder="User Name">
+      </div>
+      <button class="ui primary button"
+              type="submit"
+              ng-click="user.saveUser()">
+              Save
+      </button>
+      <button class="ui primary button"
+              type="submit"
+              ng-click="user.updateUser()">
+              Update
+      </button>
+      <button class="negative ui button"
+              type="submit"
+              ng-click="user.deleteUser()">
+              Delete
+      </button>
+    </form>
+
+  </div>
+  <div class="data-setup-get-page">
+    <div class="ui list">
+      <div class="item"
+           ng-repeat="c in user.userList track by c.id"
+           ng-click="user.setUser(c)"
+           ng-bind="c.name">
+      </div>
+    </div>
+  </div>
+</div>

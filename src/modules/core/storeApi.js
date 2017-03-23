@@ -7,7 +7,7 @@ angular.module("store.core").service("storeApi",
         self.makeRequest = function (request, config) {
 
           request.url = "http://localhost:8080" + request.url;
-          mmeaHttp.makeRequest(request.name, request, config);
+          return mmeaHttp.makeRequest(request.name, request, config);
         }
 
     }

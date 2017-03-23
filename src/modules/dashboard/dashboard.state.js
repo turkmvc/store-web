@@ -24,6 +24,15 @@ angular.module("store.dashboard")
                         }
                     }
                 })
+                .state(stateNames.USER, {
+                    "url": "/user",
+                    "views": {
+                        "contentContainer": {
+                            "controller": "userController as user",
+                            "templateUrl": "/modules/dashboard/user/user.html"
+                        }
+                    }
+                })
                 .state(stateNames.COUNTY, {
                     "url": "/county",
                     "views": {

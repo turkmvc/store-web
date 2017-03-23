@@ -5,18 +5,25 @@ angular.module("store.store").controller("storeController",
             var self = this;
             self.countyList = [];
             self.storeList = [];
+            self.address = {};
             self.storeId = "";
             self.storeName = "";
 
             self.successGetCounty = function (data) {
-              self.countyList = data;
+              // debugger;
+              // self.countyList = data;
             }
             self.getCountyList = function () {
                 var config = {
                     "onSuccess": self.successGetCounty,
                     "onError": self.errorStore
                 };
-                countyService.getCountyList(config);
+                self.countyList = countyService.getCountyList(config).promise;
+
+                self.countyList.then(function(resp) {
+                    debugger;
+                    self.countyList = resp;
+                });
 
             };
 
@@ -61,6 +68,13 @@ angular.module("store.store").controller("storeController",
                   "onError": self.errorStore
               };
               storeService.deleteStore(config, data);
+            }
+
+            self.getAddress = function () {
+              debugger;
+              return {
+                countyList: self.countyList
+              }
             }
 
             self.saveStore = function () {
